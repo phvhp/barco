@@ -4,6 +4,9 @@
     "postCreateCommand": "make setup",
     "customizations": {
         "vscode": {
+            "settings": {
+                "cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json"
+            },
             "extensions": [
                 "13xforever.language-x86-64-assembly",
                 "aaron-bond.better-comments",
@@ -21,10 +24,6 @@
                 "eamodio.gitlens",
                 "equinusocio.vsc-material-theme-icons",
                 "foxundermoon.shell-format",
-                "GitHub.codespaces",
-                "GitHub.copilot",
-                "GitHub.github-vscode-theme",
-                "GitHub.remotehub",
                 "GitHub.vscode-codeql",
                 "github.vscode-github-actions",
                 "GitHub.vscode-pull-request-github",
@@ -42,5 +41,6 @@
                 "yzhang.markdown-all-in-one"
             ]
         }
-    }
+    },
+    "remoteUser": "root"
 }

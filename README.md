@@ -76,6 +76,9 @@ $ make
 
 # Build barco with debug flags
 $ make debug=1
+
+# Build barco for header file not found when coding
+$ bear make
 ```
 
 ## Development

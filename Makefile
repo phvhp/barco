@@ -6,6 +6,7 @@ INCLUDE_DIR := ./include
 LIB_DIR := ./lib
 TESTS_DIR := ./tests
 BIN_DIR := ./bin
+COMPILER_COMMANDS_JSON_FILE := compile_commands.json
 
 # Executable settings
 BARCO := barco
@@ -103,7 +104,7 @@ setup:
 	@wget https://apt.llvm.org/llvm.sh
 	@chmod +x llvm.sh
 	@sudo ./llvm.sh 18
-	@rm llvm.sh
+	@sudo rm -fr llvm.sh
 
 	# Install Clang development tools
 	@sudo apt install -y clang-format-18 clang-tidy-18 clang-tools clangd valgrind
@@ -113,6 +114,9 @@ setup:
 
 	# Install CUnit testing framework
 	@sudo apt install -y libcunit1 libcunit1-doc libcunit1-dev
+
+	# Installl bear ('bear make' to generate compile_commands.json file)
+	@sudo apt install -y bear
 
 	# Install third-party libraries and structure them
 	@mkdir -p $(LIB_DIR)/argtable $(LIB_DIR)/log
@@ -132,5 +136,6 @@ dir:
 # Clean build and bin directories
 clean:
 	@rm -rf $(BUILD_DIR) $(BIN_DIR)
+	@rm -fr $(COMPILER_COMMANDS_JSON_FILE)
 
 .PHONY: lint format check setup dir clean deps
